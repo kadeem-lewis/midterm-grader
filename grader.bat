@@ -29,7 +29,7 @@ set PW_TEST_HTML_REPORT_OPEN=never
 start /wait cmd /c "npx playwright test --project=chromium --reporter=json,html"
 
 :: runs lighthouse tests for the specified categories and generates reports
-start /wait cmd /c npx lighthouse http://localhost:%PORT% -y --output=json --output=html --output-path=./report/lighthouse --only-categories=accessibility, best-practices, performance, seo chrome-flags="--headless"
+start /wait cmd /c npx lighthouse http://localhost:%PORT% -y --output=json --output=html --output-path=./report/lighthouse --only-categories=accessibility, best-practices, performance, seo --chrome-flags="--headless"
 
 echo "Parsing reports..."
 cd ..
