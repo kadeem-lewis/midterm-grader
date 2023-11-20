@@ -13,7 +13,8 @@ call npm install
 call npm install -D @playwright/test@latest lighthouse@latest
 call npx playwright install
 
-set PORT=3000
+:: If the second argument is not provided, use 3000 as the default port
+IF "%~2"=="" (SET PORT=3000) ELSE (SET PORT=%~2)
 
 echo "Starting server with node index.js"
 start node index.js
